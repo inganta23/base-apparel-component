@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;   
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(
+        135deg, 
+        hsl(0, 0%, 100%), 
+        hsl(0, 100%, 98%)
+    );
+}
+
+.left{
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60%;
+    height: 100vh;
+    padding: 0 40px;
+}
+
+.left h1{
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    font-weight: 300;
+    color: hsl(0, 36%, 70%);
+    font-size: 70px;
+    max-width: 400px;
+    line-height: 80px;
+    margin: 0 0 40px;
+    transform: translateX(-100%);
+    opacity: 0;
+    animation: comeinright 0.5s ease forwards;
+}
+
+.left span{
+    color: hsl(0, 6%, 24%);
+    font-weight: 600;
+}
+
+.left p{
+    color: hsl(0, 36%, 70%);
+    line-height: 25px;
+    margin-bottom: 45px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: comeinleft 0.5s ease forwards;
+    /* margin: 0 auto; */
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.content .logo{
+    margin: 60px 0 130px;
+    width: 165px;
+}
+
+.content .mobile{
+    display: none;
+}
+
+.right{
+    background-image: url(./images/hero-desktop.jpg);
+    width: 40%;
+    background-size: cover;
+    background-position: center center;
+}
+
+form{
+    position: relative;
+    transform: translateX(-100%);
+    animation: comeinright 0.5s ease forwards;
+}
+
+button{
+    background-image: linear-gradient(
+        135deg, 
+        hsl(0, 80%, 86%), 
+        hsl(0, 74%, 74%));
+    padding: 13px;
+    width: 100px;
+    border: none;
+    border-radius: 50px;
+    position: absolute;
+    height: 55px;
+    transition: opacity 0.2s ease;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    box-shadow: 2px 5px 20px hsla(0, 36%, 70%, 0.8);
+}
+
+button:hover{
+    opacity: 0.6;
+}
+
+input{
+    background-color: transparent;
+    border: 1px solid hsl(0, 36%, 70%);
+    width: 100%;
+    height: 55px;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 50px;
+    color: hsl(0, 36%, 70%);
+    margin-bottom: 10px;
+}
+
+input:focus{
+    outline: none;
+    box-shadow: 0 0 20px hsla(0, 36%, 70%, 0.3);
+}
+
+form.error input{
+    border: 2px solid hsl(0, 93%, 68%);
+}
+
+small{
+    color: hsl(0, 93%, 68%);
+    margin-left: 30px;
+    display: none;
+}
+
+.error-icon{
+    position: absolute;
+    top: 15px;
+    right: 120px;
+    display: none;
+}
+
+form.error small{
+    display: block;
+}
+
+form.error .error-icon{
+    display: block;
+}
+
+::placeholder{
+    color:hsl(0, 36%, 70%);
+    font-family: 'Josefin Sans', sans-serif;   
+}
+
+@keyframes comeinright {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes comeinleft {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    body{
+        background-image: hsl(0, 6%, 24%);
+    }
+
+    .content{
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .content .logo{
+        margin: 30px 0;
+        width: 100px;
+    }
+
+    .left{
+        width: 100%;
+        background-image: none;
+    }
+
+    .left h1{
+        font-size: 40px;
+        text-align: center;
+        line-height: 45px;
+        letter-spacing: 10px;
+        margin: 0 auto 30px;
+        
+    }
+
+    .left p{
+        line-height: 20px;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .right{
+        display: none;
+    }
+    .content .mobile{
+        display: block;
+        margin-right: -40px;
+        margin-left: -40px;
+        width: calc(100% + 80px);
+        margin-bottom: 65px;
+    }
+}
+
+
+
+
+
+
